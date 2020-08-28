@@ -74,7 +74,6 @@ function createCard(feature) {
 
         output.classList.remove('connect');
       } else {
-        output.classList.add('active');
         connect.push(output.id);
       }
     });

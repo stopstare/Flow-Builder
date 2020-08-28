@@ -331,10 +331,6 @@ blockquote {
   border-radius: 50%;
 }
 
-.output.active {
-  background-color: var(--colour-blue);
-}
-
 .output.connect {
   background-color: var(--colour-crimson);
 }
