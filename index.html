@@ -50,7 +50,7 @@
                 </div>
                 <div>Products</div>
               </div>
-              <div class="menu__button">
+              <div id="addPromo" class="menu__button">
                 <div class="menu__icon">
                   <div class="icon">money_off</div>
                 </div>
@@ -63,19 +63,19 @@
               <div>Questions</div>
             </div>
             <div class="w-layout-grid menu__grid">
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">date_range</div>
                 </div>
                 <div>Date</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">email</div>
                 </div>
                 <div>Email</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">attach_file</div>
                 </div>
@@ -84,13 +84,13 @@
                   <div>Premium</div>
                 </div>
               </div>
-              <div class="menu__button">
+              <div id="addInput" class="menu__button">
                 <div class="menu__icon">
-                  <div class="icon">face</div>
+                  <div class="icon">text_format</div>
                 </div>
-                <div>Name</div>
+                <div>Input</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">looks_one</div>
                 </div>
@@ -102,25 +102,25 @@
                 </div>
                 <div>Options</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">call</div>
                 </div>
                 <div>Phone</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">star</div>
                 </div>
                 <div>Rating</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">linear_scale</div>
                 </div>
                 <div>Scale</div>
               </div>
-              <div class="menu__button">
+              <div id="addText" class="menu__button">
                 <div class="menu__icon">
                   <div class="icon">subject</div>
                 </div>
@@ -133,13 +133,13 @@
               <div>Operations</div>
             </div>
             <div class="w-layout-grid menu__grid">
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">verified_user</div>
                 </div>
                 <div>A/B test</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__badge">
                   <div>Premium</div>
                 </div>
@@ -148,7 +148,7 @@
                 </div>
                 <div>Condition</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">redo</div>
                 </div>
@@ -157,7 +157,7 @@
                   <div>Premium</div>
                 </div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">help</div>
                 </div>
@@ -170,7 +170,7 @@
               <div>Integrations</div>
             </div>
             <div class="w-layout-grid menu__grid">
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">extension</div>
                 </div>
@@ -179,7 +179,7 @@
                   <div>Premium</div>
                 </div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__badge">
                   <div>Premium</div>
                 </div>
@@ -188,7 +188,7 @@
                 </div>
                 <div>Webhook</div>
               </div>
-              <div class="menu__button">
+              <div class="menu__button disabled">
                 <div class="menu__icon">
                   <div class="icon">extension</div>
                 </div>
@@ -204,62 +204,7 @@
     </div>
   </div>
 
-  <template id="templateRadio">
-    <div>
-      <div class="card__actions">
-        <div class="action small">
-          <div class="icon small">delete</div>
-        </div>
-        <div class="action small">
-          <div class="icon small">filter_none</div>
-        </div>
-        <div class="action small">
-          <div class="icon small">edit</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card__main">
-          <div class="title">Question?</div>
-          <div class="w-layout-grid radios">
-            <div class="radio">
-              <div class="output">
-                <div class="icon small">add</div>
-              </div>
-              <div>Option 1</div>
-            </div>
-            <div class="radio">
-              <div class="output">
-                <div class="icon small">add</div>
-              </div>
-              <div>Option 2</div>
-            </div>
-            <div class="radio">
-              <div class="output">
-                <div class="icon small">add</div>
-              </div>
-              <div>Option 3</div>
-            </div>
-            <div class="radio">
-              <div class="output">
-                <div class="icon small">add</div>
-              </div>
-              <div>Option 4</div>
-            </div>
-            <div class="radio">
-              <div class="output">
-                <div class="icon small">add</div>
-              </div>
-              <div>Option 5</div>
-            </div>
-          </div>
-          <div class="card__footer">
-            <a href="#" class="button w-button">Next</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-
+  <!-- Basic -->
   <template id="templateMessage">
     <div>
       <div class="card__actions">
@@ -274,17 +219,18 @@
         </div>
       </div>
       <div class="card">
-        <div class="output">
-          <div class="icon small">add</div>
-        </div>
+        <div class="handle"></div>
         <div class="card__image"></div>
         <div class="card__main">
-          <div class="title">What type of computer are you looking to buy?</div>
+          <div class="title" contenteditable="true"></div>
           <div class="card__footer">
-            <div class="button">Next</div>
+            <div class="button">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
           </div>
         </div>
-    </div>
+      </div>
   </template>
 
   <template id="templateProduct">
@@ -301,8 +247,9 @@
         </div>
       </div>
       <div class="card">
+        <div class="handle"></div>
         <div class="card__main">
-          <div class="title">Inspired by your shopping trends</div>
+          <div class="title" contenteditable="true"></div>
           <div class="slider">
             <div data-animation="slide" data-nav-spacing="0" data-duration="600" class="slider__inner w-slider">
               <div class="slider__mask w-slider-mask">
@@ -310,8 +257,8 @@
                   <a href="#" class="product w-inline-block">
                     <div class="product__image"></div>
                     <div class="product__main">
-                      <div class="product__name">Adidas EQT Support ADV Prime Knit<br></div>
-                      <div class="product__price">£90.00</div>
+                      <div class="product__name">Product<br></div>
+                      <div class="product__price">£##.##</div>
                     </div>
                   </a>
                 </div>
@@ -327,6 +274,173 @@
           </div>
         </div>
       </div>
+    </div>
+  </template>
+
+  <template id="templatePromo">
+    <div>
+      <div class="card__actions">
+        <div class="action small">
+          <div class="icon small">delete</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">filter_none</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">edit</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="handle"></div>
+        <div class="card__image"></div>
+        <div class="card__main">
+          <div class="title" contenteditable="true"></div>
+          <div class="discount">
+            <div>Promocode</div>
+          </div>
+          <div class="badge alert">
+            <div class="badge__icon">
+              <div class="icon small">access_time</div>
+            </div>
+            <div>Expires soon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Form -->
+
+  <template id="templateInput">
+    <div>
+      <div class="card__actions">
+        <div class="action small">
+          <div class="icon small">delete</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">filter_none</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">edit</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="handle"></div>
+        <div class="card__main">
+          <div class="title" contenteditable="true"></div>
+          <div class="form w-form">
+            <form>
+              <input type="text" required="" class="form__input w-input">
+            </form>
+          </div>
+          <div class="card__footer">
+            <div class="button">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="templateText">
+    <div>
+      <div class="card__actions">
+        <div class="action small">
+          <div class="icon small">delete</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">filter_none</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">edit</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="handle"></div>
+        <div class="card__main">
+          <div class="title" contenteditable="true"></div>
+          <div class="form w-form">
+            <form>
+              <textarea class="form__input w-input"></textarea>
+            </form>
+          </div>
+          <div class="card__footer">
+            <div class="button">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="templateRadio">
+    <div>
+      <div class="card__actions">
+        <div class="action small">
+          <div class="icon small">delete</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">filter_none</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">edit</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="handle"></div>
+        <div class="card__main">
+          <div class="title" contenteditable="true"></div>
+          <div class="w-layout-grid radios">
+            <div class="radio">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
+            <div class="radio">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
+            <div class="radio">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
+            <div class="radio">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
+            <div class="radio">
+              <div class="output"></div>
+              <div contenteditable="true"></div>
+            </div>
+          </div>
+          <div class="card__footer">
+            <div class="button">
+              <div contenteditable="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Template -->
+  <template id="templateTemplate">
+    <div>
+      <div class="card__actions">
+        <div class="action small">
+          <div class="icon small">delete</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">filter_none</div>
+        </div>
+        <div class="action small">
+          <div class="icon small">edit</div>
+        </div>
+      </div>
+      <!-- card here -->
     </div>
   </template>
 

@@ -1,23 +1,24 @@
 /* eslint-disable no-undef */
 const canvas = document.querySelector('.canvas__inner');
-const panZoom = panzoom(canvas, {
-  bounds: true,
-  boundsPadding: 0.8,
-  maxZoom: 1,
-  minZoom: 0.1
-});
-
 let cardArr = [];
 let outputArr = [];
 let lineArr = [];
 let connect = [];
+const panZoom = panzoom(canvas, {
+  filterKey: function (/* e, dx, dy, dz */) {
+    return true;
+  },
+  enableTextSelection: true,
+  bounds: true,
+  boundsPadding: 0.8,
+  maxZoom: 1,
+  minZoom: 1
+});
 panZoom.on('transform', function () {
   updateLine();
 });
 
-document.querySelector('#addRadio').addEventListener('click', function () {
-  createCard('Radio');
-});
+// Basic
 
 document.querySelector('#addMessage').addEventListener('click', function () {
   createCard('Message');
@@ -25,6 +26,24 @@ document.querySelector('#addMessage').addEventListener('click', function () {
 
 document.querySelector('#addProduct').addEventListener('click', function () {
   createCard('Product');
+});
+
+document.querySelector('#addPromo').addEventListener('click', function () {
+  createCard('Promo');
+});
+
+// Questions
+
+document.querySelector('#addInput').addEventListener('click', function () {
+  createCard('Input');
+});
+
+document.querySelector('#addRadio').addEventListener('click', function () {
+  createCard('Radio');
+});
+
+document.querySelector('#addText').addEventListener('click', function () {
+  createCard('Text');
 });
 
 function createCard(feature) {
@@ -37,12 +56,19 @@ function createCard(feature) {
   card.style.top = `${Math.abs(canvas.getBoundingClientRect().top) + window.innerHeight / 2 - 190}px`;
   card.style.left = `${Math.abs(canvas.getBoundingClientRect().left) + window.innerWidth / 2 - 148}px`;
 
+  card.addEventListener('mouseenter', function () {
+    panZoom.pause();
+  });
+
+  card.addEventListener('mouseleave', function () {
+    panZoom.resume();
+  });
+
   card.addEventListener('click', function () {
     if (connect[0] && !connect[0].includes(id)) {
       const line = new LeaderLine(document.getElementById(connect[0]), document.getElementById(card.id), {
         color: '#e2e8f0',
         size: 3,
-        path: 'grid',
         startSocket: 'right',
         startPlug: 'behind',
         endSocket: 'left',
@@ -68,7 +94,7 @@ function createCard(feature) {
 
       if (lineArr.some(line => line.start.id === output.id)) {
         const x = lineArr.findIndex(line => line.start.id === output.id);
-        
+
         lineArr[x].remove();
         lineArr.splice(x, 1);
 
@@ -80,7 +106,7 @@ function createCard(feature) {
     outputArr.push(output);
   });
 
-  card.querySelectorAll('.action')[0].addEventListener('click', function () {
+  card.querySelector('.action').addEventListener('click', function () {
 
     card.querySelectorAll('.output').forEach(output => {
       if (lineArr.some(line => line.start.id === output.id)) {
@@ -104,10 +130,14 @@ function createCard(feature) {
     cardArr = cardArr.filter(obj => obj.id !== card.id);
   });
 
+  const handle = card.querySelector('.handle');
+
   new PlainDraggable(canvas.appendChild(card), {
     onMove: function () {
       updateLine();
-    }
+    },
+    handle: handle,
+    zIndex: 100
   });
   cardArr.push(card);
 }
